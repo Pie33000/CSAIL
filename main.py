@@ -62,9 +62,9 @@ def create_final_json(variable_dic, output_list):
 def variable_graph(path, fn_name):
     json_c_file = parse_c_file(path)
     variable_dic = create_node(json_c_file, fn_name)
-    #output_list = create_edge(variable_dic)
-    #json_output = create_final_json(variable_dic, output_list)
-    #print(json_output)
+    output_list = create_edge(variable_dic)
+    json_output = create_final_json(variable_dic, output_list)
+    return json_output
 
 
 if __name__ == '__main__':
