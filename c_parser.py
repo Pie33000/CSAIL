@@ -149,6 +149,7 @@ def from_json(ast_json):
 
 def parse_c_file(filename):
     ast_dict = file_to_dict('input.c')
+    print(ast_dict)
     ast = from_dict(ast_dict)
     print(to_json(ast, sort_keys=True, indent=4))
     return to_json(ast, sort_keys=True)

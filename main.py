@@ -1,5 +1,6 @@
 import json as js
-from CParser import parse_c_file
+from c_parser import parse_c_file
+from ast_parser import AstParser
 
 
 def create_node(json_c_file, fn_name):
@@ -60,12 +61,14 @@ def create_final_json(variable_dic, output_list):
 
 
 def variable_graph(path, fn_name):
-    json_c_file = parse_c_file(path)
-    variable_dic = create_node(json_c_file, fn_name)
-    output_list = create_edge(variable_dic)
-    json_output = create_final_json(variable_dic, output_list)
+    #json_c_file = parse_c_file(path)
+    ast = AstParser()
+    ast.parse_c_file('input.c', 'foo')
+    #variable_dic = create_node(json_c_file, fn_name)
+    #print(ast.variables_dic)
+    output_list = create_edge(ast.variables_dic)
+    json_output = create_final_json(ast.variables_dic, output_list)
     return json_output
 
-
 if __name__ == '__main__':
-    variable_graph('input.c', "foo")
+    print(variable_graph('input.c', "foo"))
