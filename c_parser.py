@@ -10,6 +10,10 @@ from pycparser.plyparser import Coord
 RE_CHILD_ARRAY = re.compile(r'(.*)\[(.*)\]')
 RE_INTERNAL_ATTR = re.compile('__.*__')
 
+"""
+    This file is only for me, it produced a json file that help me to understand structure
+
+"""
 
 class CJsonError(Exception):
     pass

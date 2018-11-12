@@ -43,7 +43,7 @@ def variable_graph(path, fn_name):
     :param fn_name: name of your function in your C file
     :return:
     """
-    #json_c_file = parse_c_file(path)
+    json_c_file = parse_c_file(path)
     ast = AstParser()
     ast.parse_c_file(path, fn_name)
     output_list = create_edge(ast.variables_dic)
@@ -52,4 +52,4 @@ def variable_graph(path, fn_name):
 
 
 if __name__ == '__main__':
-    print(variable_graph('input.c', "test6"))
+    print(variable_graph('input.c', "test4"))
